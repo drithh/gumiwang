@@ -7,14 +7,14 @@ import { env } from '~/env.mjs';
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
 // Define the singleton document types
-const singletonTypes = new Set(['home']);
+const singletonTypes = new Set(['halaman-utama']);
 
 export default defineConfig({
   name: 'default',
   title: 'gumiwang',
 
-  projectId: env.SANITY_PROJECT_ID,
-  dataset: env.SANITY_DATASET,
+  projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: env.NEXT_PUBLIC_SANITY_DATASET,
   basePath: '/admin',
   useCdn: false,
   plugins: [
@@ -24,15 +24,17 @@ export default defineConfig({
           .title('Content')
           .items([
             // Our singleton type has a list item with a custom child
-            S.listItem().title('Home').id('home').child(
+            S.listItem().title('Halaman Utama').id('halaman-utama').child(
               // Instead of rendering a list of documents, we render a single
               // document, specifying the `documentId` manually to ensure
               // that we're editing the single instance of the document
-              S.document().schemaType('home').documentId('home')
+              S.document()
+                .schemaType('halaman-utama')
+                .documentId('halaman-utama')
             ),
 
             // Regular document types
-            S.documentTypeListItem('project').title('Projects'),
+            S.documentTypeListItem('slider').title('Slider'),
           ]),
     }),
     visionTool(),

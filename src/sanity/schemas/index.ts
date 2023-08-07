@@ -1,4 +1,4 @@
-import projectSchema from './project-schema';
-import homeSchema from './singletons/home';
+import sliderSchema from './object/slider';
+import halamanUtamaSchema from './singletons/halaman-utama';
 
-export const schemaTypes = [projectSchema, homeSchema];
+export const schemaTypes = [sliderSchema, halamanUtamaSchema];
