@@ -2,15 +2,14 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import { Slides } from '~/types';
+import { Slide } from '~/types';
 
-interface SliderProps {
-  slides: Slides[];
+interface CarouselProps {
+  slides: Slide[];
 }
 
-function Slider({ slides }: SliderProps) {
+function Carousel({ slides }: CarouselProps) {
   const [emblaRef] = useEmblaCarousel();
-
   return (
     <div className="overflow-hidden" ref={emblaRef}>
       <div className="flex h-screen">
@@ -26,7 +25,7 @@ function Slider({ slides }: SliderProps) {
               </div>
             </div>
 
-            <Image src={slide.gambar} alt={slide.judul} fill />
+            <Image src={slide.gambar} alt={slide.alt} fill />
           </div>
         ))}
       </div>
@@ -34,4 +33,4 @@ function Slider({ slides }: SliderProps) {
   );
 }
 
-export default Slider;
+export default Carousel;

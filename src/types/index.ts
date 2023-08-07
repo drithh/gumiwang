@@ -1,2 +1,2 @@
 export * from './singletons/halaman-utama';
-export * from './objects/slides';
+export * from './objects/slide';
