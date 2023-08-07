@@ -10,15 +10,15 @@ export default defineType({
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'tampilanSlider',
-      title: 'Tampilan Slider',
+      name: 'tampilanSlide',
+      title: 'Tampilan Slide',
       description:
-        'Ini adalah slider yang akan muncul di halaman utama. Anda dapat mengubah urutan slider dengan mengubah urutan di sini.',
+        'Ini adalah slide yang akan muncul di halaman utama. Anda dapat mengubah urutan slider dengan mengubah urutan di sini.',
       type: 'array',
       of: [
         defineArrayMember({
           type: 'reference',
-          to: [{ type: 'slider' }],
+          to: [{ type: 'slide' }],
         }),
       ],
     }),

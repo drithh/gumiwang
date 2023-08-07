@@ -1,1 +1,2 @@
-export * from './project';
+export * from './singletons/halaman-utama';
+export * from './objects/slides';

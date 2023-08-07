@@ -34,7 +34,7 @@ export default defineConfig({
             ),
 
             // Regular document types
-            S.documentTypeListItem('slider').title('Slider'),
+            S.documentTypeListItem('slide').title('Slide'),
           ]),
     }),
     visionTool(),
