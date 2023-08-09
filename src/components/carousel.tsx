@@ -64,10 +64,10 @@ export default function Carousel({ slides }: CarouselProps) {
           >
             <div className="absolute inset-0 z-10 bg-black bg-opacity-50">
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <h1 className="font-bold text-primary-foreground md:text-4xl lg:text-5xl">
+                <h1 className="font-bold text-slate-100 md:text-4xl lg:text-5xl">
                   {slide.judul}
                 </h1>
-                <p className="w-4/5 text-center text-xs text-primary-foreground md:w-full md:text-base lg:text-xl">
+                <p className="w-4/5 text-center text-xs text-slate-100 md:w-full md:text-base lg:text-xl">
                   {slide.deskripsi}
                 </p>
               </div>
