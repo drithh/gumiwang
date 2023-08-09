@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from "react";
 
 type PropType = PropsWithChildren<
   React.DetailedHTMLProps<
@@ -22,7 +22,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="bg-transparent  z-1 w-16 h-16 "
+      className="z-1  h-6 w-6 bg-transparent sm:h-10 sm:w-10 md:h-16 md:w-16"
       type="button"
       {...restProps}
     >
@@ -45,7 +45,7 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="transparent  z-1 w-16 h-16 embla__button--next"
+      className="transparent z-1 h-6 w-6 sm:h-10 sm:w-10 md:h-16 md:w-16"
       type="button"
       {...restProps}
     >

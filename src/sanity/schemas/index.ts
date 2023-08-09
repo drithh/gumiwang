@@ -1,4 +1,10 @@
-import slideSchema from './objects/slide';
+import slideSchema from './documents/slide';
+import dusunSchema from './documents/dusun';
 import halamanUtamaSchema from './singletons/halaman-utama';
-
-export const schemaTypes = [slideSchema, halamanUtamaSchema];
+import wargaSchema from './objects/warga';
+export const schemaTypes = [
+  slideSchema,
+  dusunSchema,
+  halamanUtamaSchema,
+  wargaSchema,
+];

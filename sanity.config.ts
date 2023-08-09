@@ -35,6 +35,7 @@ export default defineConfig({
 
             // Regular document types
             S.documentTypeListItem('slide').title('Slide'),
+            S.documentTypeListItem('dusun').title('Dusun'),
           ]),
     }),
     visionTool(),
