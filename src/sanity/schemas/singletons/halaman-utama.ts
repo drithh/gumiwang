@@ -1,40 +1,40 @@
-import { HomeIcon } from '@sanity/icons';
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { HomeIcon } from "@sanity/icons";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
-  name: 'halaman-utama',
-  title: 'Halaman Utama',
-  type: 'document',
+  name: "halaman-utama",
+  title: "Halaman Utama",
+  type: "document",
   icon: HomeIcon,
   // Uncomment below to have edits publish automatically as you type
   liveEdit: true,
   fields: [
     defineField({
-      name: 'tampilanSlide',
-      title: 'Tampilan Slide',
+      name: "tampilanSlide",
+      title: "Tampilan Slide",
       description:
-        'Ini adalah slide yang akan muncul di halaman utama. Anda dapat mengubah urutan slider dengan mengubah urutan di sini.',
-      type: 'array',
+        "Ini adalah slide yang akan muncul di halaman utama. Anda dapat mengubah urutan slider dengan mengubah urutan di sini.",
+      type: "array",
       of: [
         defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'slide' }],
+          type: "reference",
+          to: [{ type: "slide" }],
         }),
       ],
     }),
     defineField({
-      name: 'title',
-      description: 'This field is the title of your personal website.',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      description: "This field is the title of your personal website.",
+      title: "Title",
+      type: "string",
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'overview',
+      name: "overview",
       description:
-        'Used both for the <meta> description tag for SEO, and the personal website subheader.',
-      title: 'Description',
-      type: 'array',
+        "Used both for the <meta> description tag for SEO, and the personal website subheader.",
+      title: "Description",
+      type: "array",
       of: [
         // Paragraphs
         defineArrayMember({
@@ -42,31 +42,40 @@ export default defineType({
           marks: {
             annotations: [
               {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
+                name: "link",
+                type: "object",
+                title: "Link",
                 fields: [
                   {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
+                    name: "href",
+                    type: "url",
+                    title: "Url",
                   },
                 ],
               },
             ],
             decorators: [
               {
-                title: 'Italic',
-                value: 'em',
+                title: "Italic",
+                value: "em",
               },
               {
-                title: 'Strong',
-                value: 'strong',
+                title: "Strong",
+                value: "strong",
               },
             ],
           },
-          styles: [],
-          type: 'block',
+          styles: [
+            {
+              title: "Normal",
+              value: "normal",
+            },
+            {
+              title: "H1",
+              value: "h1",
+            },
+          ],
+          type: "block",
         }),
       ],
       validation: (rule) => rule.max(155).required(),
@@ -74,11 +83,11 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: "title",
     },
     prepare({ title }) {
       return {
-        subtitle: 'Home',
+        subtitle: "Home",
         title,
       };
     },

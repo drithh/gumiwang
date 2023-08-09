@@ -27,7 +27,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
       {...restProps}
     >
       <svg
-        className="stroke-slate-100 stroke-[4] text-slate-900"
+        className="stroke-border stroke-[12] text-foreground"
         viewBox="0 0 532 532"
       >
         <path
@@ -50,7 +50,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       {...restProps}
     >
       <svg
-        className="stroke-slate-100 stroke-[4] text-slate-900"
+        className="stroke-border stroke-[12] text-foreground"
         viewBox="0 0 532 532"
       >
         <path
