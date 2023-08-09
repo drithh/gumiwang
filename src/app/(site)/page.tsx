@@ -1,14 +1,15 @@
 import Image from "next/image";
-import { getHalamanUtama } from "@/src/sanity/sanity-utils";
+import { getHalamanUtama, getStatistikDesa } from "@/src/sanity/sanity-utils";
 import Carousel from "~/components/carousel";
 
 export default async function Home() {
   const halamanUtama = await getHalamanUtama();
+  const statistikDesa = await getStatistikDesa();
   return (
     <div className="bg-background">
       <Carousel slides={halamanUtama.slides} />
 
-      <main className="mx-auto mt-8 max-w-5xl px-4 xl:px-0">
+      <main className="mx-auto mt-24 flex max-w-5xl flex-col gap-20 px-4 xl:px-0">
         {/* profil desa */}
         <div className="mx-auto flex flex-col items-center gap-2 sm:flex-row">
           <div className="xl:px-8">
@@ -22,7 +23,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-1 flex-col place-items-center gap-4 sm:items-start">
             <h1 className="text-justify text-xl font-bold text-foreground md:text-4xl">
-              Profil Desa Gumiwang Lor
+              Website Desa Gumiwang Lor
             </h1>
             <p className="text-center text-sm text-muted-foreground sm:text-justify md:text-lg">
               Situs Resmi Desa Gumiwang Lor di Kecamatan Wuryantoro, Kabupaten
@@ -36,6 +37,64 @@ export default async function Home() {
         </div>
 
         {/* statistik desa */}
+        <div className="">
+          <h1 className="text-center text-xl font-bold text-foreground md:text-4xl">
+            Statistik Desa
+          </h1>
+          <p className="text-center text-sm text-muted-foreground md:text-lg">
+            Data Statistik Desa Gumiwang Lor
+          </p>
+
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              className="flex h-full flex-1 flex-col place-content-evenly  gap-2 rounded-md border
+              border-border p-4 shadow-md"
+            >
+              <h1 className="text-center text-2xl font-bold text-foreground md:text-4xl">
+                {statistikDesa.length}
+              </h1>
+              <p className="text-center text-sm text-muted-foreground md:text-lg">
+                Jumlah Dusun
+              </p>
+            </div>
+            <div
+              className="flex h-full flex-1 flex-col place-content-evenly  gap-2 rounded-md border
+              border-border p-4 shadow-md"
+            >
+              <h1 className="text-center text-2xl font-bold text-foreground md:text-4xl">
+                {statistikDesa.reduce((acc, cur) => acc + cur.warga, 0)}
+              </h1>
+              <p className="text-center text-sm text-muted-foreground md:text-lg">
+                Jumlah Warga
+              </p>
+            </div>
+            <div
+              className="flex h-full flex-1 flex-col place-content-evenly gap-2 rounded-md border
+              border-border p-4 shadow-md"
+            >
+              <h1 className="text-center text-2xl font-bold text-foreground md:text-4xl">
+                {statistikDesa.reduce(
+                  (acc, cur) => acc + cur.balitaDanSekolah,
+                  0,
+                )}
+              </h1>
+              <p className="text-center text-sm text-muted-foreground md:text-lg">
+                Jumlah Balita & Usia Sekolah
+              </p>
+            </div>
+            <div
+              className="flex h-full flex-1 flex-col place-content-evenly  gap-2 rounded-md border
+              border-border p-4 shadow-md"
+            >
+              <h1 className="text-center text-2xl font-bold text-foreground md:text-4xl">
+                {statistikDesa.reduce((acc, cur) => acc + cur.lansia, 0)}
+              </h1>
+              <p className="text-center text-sm text-muted-foreground md:text-lg">
+                Jumlah Lanjut Usia
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* artikel */}
       </main>
