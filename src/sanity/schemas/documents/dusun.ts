@@ -1,54 +1,63 @@
-const dusunSchema = {
-  name: 'dusun',
-  title: 'Dusun',
-  type: 'document',
-  fields: [
-    {
-      name: 'nama',
-      title: 'Nama Dusun',
-      type: 'string',
-    },
-    {
-      name: 'namaKepalaDusun',
-      title: 'Nama kepala Dusun',
-      type: 'string',
-    },
-    {
-      name: 'namaKetuaRW',
-      title: 'Nama Ketua RW',
-      type: 'string',
-    },
-    {
-      name: 'namaKetuaRT',
-      title: 'Nama Ketua RT',
-      type: 'string',
-    },
-    {
-      name: 'namaKetuaKarangTaruna',
-      title: 'Nama Ketua Karang Taruna',
-      type: 'string',
-    },
-    {
-      name: 'jumlahWarga',
-      title: 'Jumlah Warga',
-      type: 'warga',
-    },
-    {
-      name: 'jumlahWargaUsiaSekolah',
-      title: 'Jumlah Warga Usia Sekolah',
-      type: 'warga',
-    },
-    {
-      name: 'jumlahWargaBalita',
-      title: 'Jumlah Warga Balita',
-      type: 'warga',
-    },
-    {
-      name: 'jumlahWargaLansia',
-      title: 'Jumlah Warga Lansia',
-      type: 'warga',
-    },
-  ],
-};
+import { defineArrayMember, defineField, defineType } from "sanity";
 
-export default dusunSchema;
+export default defineType({
+  name: "dusun",
+  title: "Dusun",
+  type: "document",
+  fields: [
+    defineField({
+      name: "nama",
+      title: "Nama Dusun",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "namaKepalaDusun",
+      title: "Nama kepala Dusun",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "namaKetuaRW",
+      title: "Nama Ketua RW",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "namaKetuaRT",
+      title: "Nama Ketua RT",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "namaKetuaKarangTaruna",
+      title: "Nama Ketua Karang Taruna",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "jumlahWarga",
+      title: "Jumlah Warga",
+      type: "warga",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "jumlahWargaUsiaSekolah",
+      title: "Jumlah Warga Usia Sekolah",
+      type: "warga",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "jumlahWargaBalita",
+      title: "Jumlah Warga Balita",
+      type: "warga",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "jumlahWargaLansia",
+      title: "Jumlah Warga Lansia",
+      type: "warga",
+      validation: (rule) => rule.required(),
+    }),
+  ],
+});

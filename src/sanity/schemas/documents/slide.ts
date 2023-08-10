@@ -1,37 +1,40 @@
-const slideSchema = {
-  name: 'slide',
-  title: 'Slide',
-  type: 'document',
+import { defineArrayMember, defineField, defineType } from "sanity";
+
+export default defineType({
+  name: "slide",
+  title: "Slide",
+  type: "document",
   fields: [
-    {
-      name: 'judul',
-      title: 'Judul Slide',
-      type: 'string',
-    },
-    {
-      name: 'deskripsi',
-      title: 'Deskripsi Slide',
-      type: 'text',
-    },
-    {
-      name: 'gambar',
-      title: 'Gambar Slide',
-      type: 'image',
+    defineField({
+      name: "judul",
+      title: "Judul Slide",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "deskripsi",
+      title: "Deskripsi Slide",
+      type: "text",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "gambar",
+      title: "Gambar Slide",
+      type: "image",
+      validation: (rule) => rule.required(),
       options: {
         hotspot: true,
       },
       fields: [
         {
-          name: 'alt',
-          title: 'Alt',
-          type: 'string',
+          name: "alt",
+          title: "Alt",
+          type: "string",
           options: {
             isHighlighted: true,
           },
         },
       ],
-    },
+    }),
   ],
-};
-
-export default slideSchema;
+});

@@ -49,9 +49,9 @@ import { cn } from "~/lib/utils";
 
 export default function Navigation() {
   return (
-    <nav className="mx-auto flex max-w-5xl place-content-between px-4 py-2">
-      <div className="flex gap-2">
-        <div className="relative h-12 w-12">
+    <nav className="mx-auto flex max-w-5xl place-content-between px-4 py-4 ">
+      <Link href="/" className="flex items-center gap-2">
+        <div className="relative h-9 w-9 sm:h-12 sm:w-12">
           <Image
             src="/images/logo.png"
             fill
@@ -59,14 +59,14 @@ export default function Navigation() {
           ></Image>
         </div>
         <div className="flex flex-1 flex-col">
-          <h2 className="text-justify text-lg font-bold text-foreground ">
+          <h2 className="text-justify text-base font-bold text-foreground sm:text-lg ">
             Gumiwang Lor
           </h2>
-          <p className=" text-justify text-sm text-muted-foreground ">
+          <p className=" text-justify text-xs text-muted-foreground sm:text-sm ">
             Wonogiri
           </p>
         </div>
-      </div>
+      </Link>
       {/*  hamburger menu, shown when the screen is small */}
       <div className="flex gap-2 sm:hidden">
         <ModeToggle />
@@ -77,7 +77,7 @@ export default function Navigation() {
               <Menu />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="mt-[11px] w-screen  rounded-t-none border-t-0 py-4 ">
+          <DropdownMenuContent className="mt-[11px] w-screen  rounded-t-none border-0 py-4 shadow-2xl ">
             <DropdownMenuGroup className="flex flex-col gap-2">
               <DropdownMenuItem>
                 <Link
