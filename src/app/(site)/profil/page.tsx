@@ -1,16 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import GoogleMapReact from "google-map-react";
-import { getPerangkatDesa } from "~/sanity/sanity-utils";
-interface MarkerProps {
-  lat: number;
-  lng: number;
-  text: string;
-}
+import { getHalamanProfil, getPerangkatDesa } from "~/sanity/sanity-utils";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { cn } from "~/lib/utils";
 
 export default async function Profil() {
+  const halamanProfil = await getHalamanProfil();
   const perangkatDesa = await getPerangkatDesa();
   return (
     <main className="mx-auto mt-24 flex max-w-5xl flex-col gap-20 px-4 xl:px-0">
@@ -29,13 +24,7 @@ export default async function Profil() {
             Desa Gumiwang Lor
           </h1>
           <p className="text-center text-sm text-muted-foreground sm:text-justify md:text-lg">
-            Desa Gumiwang Lor adalah desa di kecamatan Wuryantoro, Kabupaten
-            Wonogiri, Jawa Tengah, Indonesia. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Aspernatur similique veritatis quae
-            temporibus laboriosam, blanditiis reiciendis itaque eius, fuga
-            sapiente repellat debitis! Ipsam sed similique dolorem dolores fugit
-            eaque harum facilis saepe, molestias libero? Architecto animi
-            nesciunt obcaecati fugit deleniti.
+            {halamanProfil.deskripsiDesa}
           </p>
         </div>
       </div>
@@ -47,21 +36,12 @@ export default async function Profil() {
             Geografis Desa Gumiwang Lor
           </h1>
           <p className="text-center text-sm text-muted-foreground sm:text-justify md:text-lg">
-            Desa Gumiwang Lor terletak lebih kurang 12 km ke arah selatan dari
-            pusat Kota Wonogiri, Gumiwang Lor menjauh sekitar 6 km dari pusat
-            kecamatan Wuryantoro. Dengan kata lain, Gumiwang Lor membanggakan
-            diri sebagai kelurahan terjauh yang menghiasi sebelah utara
-            kecamatan Wuryantoro. Wilayahnya yang luas merentang hingga 1826
-            hektar. Sementara itu, batas-batas wilayahnya dengan lembut
-            terhampar: Di sebelah barat, bertetangga dengan Kecamatan
-            Wuryantoro; di utara, menghadap Kecamatan Wonogiri; sedangkan di
-            timur, berdekatan dengan Kecamatan Wonogiri, dan di selatan,
-            berbatasan dengan Waduk Gajah Mungkur.
+            {halamanProfil.geografisDesa}
           </p>
         </div>
         <div className="flex-2 h-[26rem] sm:flex-1">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44538.61971527043!2d110.87281310376504!3d-7.8674049007549325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a3214307a2efd%3A0x5027a76e3569ed0!2sGumiwang%20Lor%2C%20Wuryantoro%2C%20Wonogiri%20Regency%2C%20Central%20Java!5e1!3m2!1sen!2sid!4v1691664575378!5m2!1sen!2sid"
+            src={halamanProfil.linkGoogleMaps}
             className="h-full w-full  rounded-xl"
             loading="lazy"
           ></iframe>
@@ -73,13 +53,13 @@ export default async function Profil() {
         <h1 className="w-full text-center text-2xl font-bold text-foreground md:text-3xl">
           Struktur Organisasi
         </h1>
-        <div className="grid grid-cols-1 items-center justify-center gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2">
           {perangkatDesa.map((perangkat) => (
             <div
               key={perangkat._id}
               className={cn(
-                " rounded-xl bg-accent p-4 shadow-md",
-                perangkat.prioritas === 1 && "col-span-2 ",
+                " flex h-32 content-center rounded-xl bg-accent p-4 shadow-md",
+                perangkat.prioritas === 1 && "md:col-span-2 ",
               )}
             >
               <div className="flex w-full flex-row place-content-center place-items-center gap-5">
@@ -96,13 +76,11 @@ export default async function Profil() {
                     {perangkat.nama}
                   </h1>
                   <div className="flex justify-between">
-                    <p className=" text-sm text-muted-foreground">Jabatan:</p>
                     <p className="  text-sm text-muted-foreground">
                       {perangkat.jabatan}
                     </p>
                   </div>
                   <div className="flex justify-between">
-                    <p className=" text-sm text-muted-foreground">Alamat:</p>
                     <p className="  text-sm text-muted-foreground">
                       {perangkat.alamat}
                     </p>

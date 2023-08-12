@@ -7,7 +7,7 @@ import { env } from "~/env.mjs";
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 
 // Define the singleton document types
-const singletonTypes = new Set(["halaman-utama"]);
+const singletonTypes = new Set(["halaman-utama", "halamanProfil"]);
 
 export default defineConfig({
   name: "default",
@@ -31,6 +31,15 @@ export default defineConfig({
               S.document()
                 .schemaType("halaman-utama")
                 .documentId("halaman-utama"),
+            ),
+
+            S.listItem().title("Halaman Profil").id("halamanProfil").child(
+              // Instead of rendering a list of documents, we render a single
+              // document, specifying the `documentId` manually to ensure
+              // that we're editing the single instance of the document
+              S.document()
+                .schemaType("halamanProfil")
+                .documentId("halamanProfil"),
             ),
 
             // Regular document types

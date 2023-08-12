@@ -27,7 +27,6 @@
     "embla-carousel-react": "8.0.0-rc11",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
-    "google-map-react": "^2.2.1",
     "lucide-react": "^0.263.1",
     "next": "13.4.12",
     "next-sanity": "^5.1.2",

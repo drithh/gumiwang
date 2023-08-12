@@ -1,6 +1,11 @@
 import { createClient } from "next-sanity";
 import { env } from "~/env.mjs";
-import { HalamanUtama, PerangkatDesa, StatistikDusun } from "~/types";
+import {
+  HalamanProfil,
+  HalamanUtama,
+  PerangkatDesa,
+  StatistikDusun,
+} from "~/types";
 
 const client = createClient({
   projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -35,4 +40,11 @@ export async function getPerangkatDesa(): Promise<PerangkatDesa[]> {
        "alt": foto.alt
  }`);
   return perangkatDesa;
+}
+
+export async function getHalamanProfil(): Promise<HalamanProfil> {
+  const halamanProfil = await client.fetch(`*[_type == "halamanProfil"] {
+    _id, deskripsiDesa, geografisDesa, linkGoogleMaps
+  }[0]`);
+  return halamanProfil;
 }
