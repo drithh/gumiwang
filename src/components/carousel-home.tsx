@@ -7,7 +7,7 @@ import useEmblaCarousel, {
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { Slide } from "~/types";
-import { NextButton, PrevButton } from "./carousel-button-arrow";
+import { NextButton, PrevButton } from "./carousel-button-arrow-home";
 import { useCallback, useEffect, useState } from "react";
 
 interface CarouselProps {

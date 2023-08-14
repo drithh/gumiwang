@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getHalamanUtama, getStatistikDesa } from "@/src/sanity/sanity-utils";
-import Carousel from "~/components/carousel";
+import Carousel from "~/components/carousel-home";
 
 export default async function Home() {
   const halamanUtama = await getHalamanUtama();
@@ -9,7 +9,7 @@ export default async function Home() {
     <div className="bg-background">
       <Carousel slides={halamanUtama.slides} />
 
-      <main className="mx-auto mt-24 flex max-w-5xl flex-col gap-20 px-4 xl:px-0">
+      <main className="mx-auto mt-12 flex max-w-5xl flex-col gap-20 px-4 md:mt-24 xl:px-0">
         {/* profil desa */}
         <div className="mx-auto flex flex-col items-center gap-2 sm:flex-row">
           <div className="xl:px-8">

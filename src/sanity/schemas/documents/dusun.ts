@@ -18,24 +18,6 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "namaKetuaRW",
-      title: "Nama Ketua RW",
-      type: "string",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "namaKetuaRT",
-      title: "Nama Ketua RT",
-      type: "string",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "namaKetuaKarangTaruna",
-      title: "Nama Ketua Karang Taruna",
-      type: "string",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
       name: "jumlahWarga",
       title: "Jumlah Warga",
       type: "warga",

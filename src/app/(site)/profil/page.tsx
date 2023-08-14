@@ -8,7 +8,7 @@ export default async function Profil() {
   const halamanProfil = await getHalamanProfil();
   const perangkatDesa = await getPerangkatDesa();
   return (
-    <main className="mx-auto mt-24 flex max-w-5xl flex-col gap-20 px-4 xl:px-0">
+    <main className="mx-auto mt-12 flex max-w-5xl flex-col gap-20 px-4 md:mt-24 xl:px-0">
       <div className="mx-auto flex flex-col items-center gap-2 sm:flex-row">
         <div className="xl:px-8">
           <div className="relative h-32 w-32 md:h-48 md:w-48">

@@ -3,6 +3,7 @@ import { env } from "~/env.mjs";
 import {
   HalamanProfil,
   HalamanUtama,
+  PembangunanDesa,
   PerangkatDesa,
   StatistikDusun,
 } from "~/types";
@@ -47,4 +48,15 @@ export async function getHalamanProfil(): Promise<HalamanProfil> {
     _id, deskripsiDesa, geografisDesa, linkGoogleMaps
   }[0]`);
   return halamanProfil;
+}
+
+export async function getPembangunanDesa(): Promise<PembangunanDesa[]> {
+  const pembangunanDesa = await client.fetch(`*[_type == "pembangunanDesa"] {
+    nama, lokasi, progress, _id, deskripsi, _updatedAt, _createdAt, dana, "gambarProyek": gambar[] {
+      alt,
+      "gambar": asset->url,
+      "_id": asset->_id
+    }
+  }`);
+  return pembangunanDesa;
 }
