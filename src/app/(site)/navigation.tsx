@@ -111,14 +111,6 @@ export default function Navigation() {
                   Demografi
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  className="w-full text-center font-medium"
-                  href="/artikel"
-                >
-                  Artikel
-                </Link>
-              </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -153,13 +145,6 @@ export default function Navigation() {
               <Link href="/demografi" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Demografi
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/artikel" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Artikel
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
