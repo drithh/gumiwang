@@ -7,6 +7,7 @@ import {
   PerangkatDesa,
   StatistikDusun,
 } from "~/types";
+import { Dusun } from "~/types";
 
 const client = createClient({
   projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -59,4 +60,11 @@ export async function getPembangunanDesa(): Promise<PembangunanDesa[]> {
     }
   }`);
   return pembangunanDesa;
+}
+
+export async function getDataDusun(): Promise<Dusun[]> {
+  const dataDusun = await client.fetch(`*[_type == "dusun"] {
+    nama, jumlahWargaBalita, jumlahWarga, jumlahWargaLansia, _id, jumlahWargaUsiaSekolah, namaKepalaDusun
+  }`);
+  return dataDusun;
 }

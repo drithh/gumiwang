@@ -43,7 +43,6 @@ export default defineConfig({
             ),
 
             // Regular document types
-            S.documentTypeListItem("slide").title("Slide"),
             S.documentTypeListItem("dusun").title("Dusun"),
             S.documentTypeListItem("pembangunanDesa").title("Pembangunan Desa"),
             S.documentTypeListItem("perangkatDesa").title("Perangkat Desa"),

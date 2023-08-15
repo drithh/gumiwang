@@ -32,6 +32,9 @@ dependencies:
   '@t3-oss/env-nextjs':
     specifier: ^0.6.0
     version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
+  '@tanstack/react-table':
+    specifier: ^8.9.3
+    version: 8.9.3(react-dom@18.2.0)(react@18.2.0)
   '@types/node':
     specifier: 20.4.5
     version: 20.4.5
@@ -44,6 +47,9 @@ dependencies:
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.27)
+  chart.js:
+    specifier: ^4.3.3
+    version: 4.3.3
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -83,6 +89,9 @@ dependencies:
   react:
     specifier: 18.2.0
     version: 18.2.0
+  react-chartjs-2:
+    specifier: ^5.2.0
+    version: 5.2.0(chart.js@4.3.3)(react@18.2.0)
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
@@ -871,6 +880,10 @@ packages:
 
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
+    dev: false
+
+  /@kurkle/color@0.3.2:
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
     dev: false
 
   /@lezer/common@1.0.3:
@@ -2035,6 +2048,18 @@ packages:
       zod: 3.21.4
     dev: false
 
+  /@tanstack/react-table@8.9.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Ng9rdm3JPoSCi6cVZvANsYnF+UoGVRxflMb270tVj0+LjeT/ZtZ9ckxF6oLPLcKesza6VKBqtdF9mQ+vaz24Aw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@tanstack/table-core': 8.9.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@tanstack/react-virtual@3.0.0-beta.54(react@18.2.0):
     resolution: {integrity: sha512-D1mDMf4UPbrtHRZZriCly5bXTBMhylslm4dhcHqTtDJ6brQcgGmk8YD9JdWBGWfGSWPKoh2x1H3e7eh+hgPXtQ==}
     peerDependencies:
@@ -2042,6 +2067,11 @@ packages:
     dependencies:
       '@tanstack/virtual-core': 3.0.0-beta.54
       react: 18.2.0
+    dev: false
+
+  /@tanstack/table-core@8.9.3:
+    resolution: {integrity: sha512-NpHZBoHTfqyJk0m/s/+CSuAiwtebhYK90mDuf5eylTvgViNOujiaOaxNDxJkQQAsVvHWZftUGAx1EfO1rkKtLg==}
+    engines: {node: '>=12'}
     dev: false
 
   /@tanstack/virtual-core@3.0.0-beta.54:
@@ -2765,6 +2795,13 @@ packages:
 
   /character-reference-invalid@1.1.4:
     resolution: {integrity: sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==}
+    dev: false
+
+  /chart.js@4.3.3:
+    resolution: {integrity: sha512-aTk7pBw+x6sQYhon/NR3ikfUJuym/LdgpTlgZRe2PaEhjUMKBKyNaFCMVRAyTEWYFNO7qRu7iQVqOw/OqzxZxQ==}
+    engines: {pnpm: '>=7'}
+    dependencies:
+      '@kurkle/color': 0.3.2
     dev: false
 
   /chokidar@3.5.3:
@@ -5762,6 +5799,16 @@ packages:
     resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
     dependencies:
       performance-now: 2.1.0
+    dev: false
+
+  /react-chartjs-2@5.2.0(chart.js@4.3.3)(react@18.2.0):
+    resolution: {integrity: sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==}
+    peerDependencies:
+      chart.js: ^4.1.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      chart.js: 4.3.3
+      react: 18.2.0
     dev: false
 
   /react-clientside-effect@1.2.6(react@18.2.0):
