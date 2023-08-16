@@ -27,6 +27,7 @@ export default async function Home() {
               <Image
                 src="/images/logo.png"
                 fill
+                sizes="100%"
                 alt="logo desa gumiwang lor"
               ></Image>
             </div>

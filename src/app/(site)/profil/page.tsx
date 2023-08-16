@@ -16,6 +16,7 @@ export default async function Profil() {
               src="/images/logo.png"
               fill
               alt="logo desa gumiwang lor"
+              sizes="100%"
             ></Image>
           </div>
         </div>

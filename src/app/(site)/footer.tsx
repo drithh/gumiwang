@@ -14,6 +14,7 @@ export default function Footer() {
                 src="/images/logo.png"
                 fill
                 alt="logo desa gumiwang lor"
+                sizes="100%"
               ></Image>
             </AspectRatio>
           </div>

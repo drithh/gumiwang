@@ -68,8 +68,8 @@ export default function Carousel({ slides }: CarouselProps) {
                 src={slide.gambar}
                 alt={slide.alt}
                 fill
-                objectFit="cover"
                 priority={true}
+                sizes="100%"
               />
             </AspectRatio>
           </div>

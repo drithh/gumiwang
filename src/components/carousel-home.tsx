@@ -73,7 +73,13 @@ export default function Carousel({ slides }: CarouselProps) {
               </div>
             </div>
             <div className="relative h-[56vw] max-h-screen w-screen">
-              <Image src={slide.gambar} alt={slide.alt} fill priority={true} />
+              <Image
+                src={slide.gambar}
+                alt={slide.alt}
+                fill
+                priority={true}
+                sizes="100%"
+              />
             </div>
           </div>
         ))}

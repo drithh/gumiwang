@@ -91,16 +91,10 @@ export default async function DemografiPage() {
                   <TableRow>
                     <TableCell className="font-medium">Dewasa</TableCell>
                     <TableCell className="font-medium">
-                      {dusun.jumlahWarga?.lakiLaki -
-                        dusun.jumlahWargaBalita?.lakiLaki -
-                        dusun.jumlahWargaUsiaSekolah?.lakiLaki -
-                        dusun.jumlahWargaLansia?.lakiLaki}
+                      {dusun.jumlahWarga.perempuan}
                     </TableCell>
                     <TableCell className="font-medium">
-                      {dusun.jumlahWarga?.perempuan -
-                        dusun.jumlahWargaBalita?.perempuan -
-                        dusun.jumlahWargaUsiaSekolah?.perempuan -
-                        dusun.jumlahWargaLansia?.perempuan}
+                      {dusun.jumlahWarga.lakiLaki}
                     </TableCell>
                   </TableRow>
                   <TableRow>

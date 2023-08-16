@@ -11,23 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  Menu,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { Button } from "~/components/ui/button";
 import {
@@ -35,13 +19,6 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import React from "react";
@@ -55,6 +32,7 @@ export default function Navigation() {
           <Image
             src="/images/logo.png"
             fill
+            sizes="100%"
             alt="logo desa gumiwang lor"
           ></Image>
         </div>
@@ -79,7 +57,10 @@ export default function Navigation() {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="mt-[11px] w-screen rounded-t-none border-0 bg-background py-4 shadow-2xl ">
             <DropdownMenuGroup className="flex flex-col gap-2">
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className="flex place-content-center text-center"
+              >
                 <Link
                   className="w-full text-center font-semibold"
                   href="/profil"
@@ -87,7 +68,10 @@ export default function Navigation() {
                   Profil
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className="flex place-content-center text-center"
+              >
                 <Link
                   className="w-full text-center font-medium"
                   href="/pembangunan-desa"
@@ -95,7 +79,10 @@ export default function Navigation() {
                   Pembangunan Desa
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className="flex place-content-center text-center"
+              >
                 <Link
                   className="w-full text-center font-medium"
                   href="/dana-desa"
@@ -103,7 +90,10 @@ export default function Navigation() {
                   Dana Desa
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className="flex place-content-center text-center"
+              >
                 <Link
                   className="w-full text-center font-medium"
                   href="/demografi"
