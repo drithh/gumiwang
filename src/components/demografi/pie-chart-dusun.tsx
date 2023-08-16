@@ -76,8 +76,8 @@ export default function PieChartDusun({ data }: Props) {
         sumDataDusun.jumlahWargaLansia.perempuan,
     },
   };
-  const { theme } = useTheme();
-  const rgbOpacity = theme === "dark" ? 0.9 : 0.5;
+  const { resolvedTheme } = useTheme();
+  const rgbOpacity = resolvedTheme === "dark" ? 0.9 : 0.5;
   return (
     <Doughnut
       datasetIdKey="id"
@@ -85,7 +85,9 @@ export default function PieChartDusun({ data }: Props) {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: { labels: { color: theme === "dark" ? "white" : "black" } },
+          legend: {
+            labels: { color: resolvedTheme === "dark" ? "white" : "black" },
+          },
         },
       }}
       data={{

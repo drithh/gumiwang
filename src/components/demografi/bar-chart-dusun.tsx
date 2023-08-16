@@ -30,8 +30,8 @@ interface Props {
 }
 
 export default function BarChartDusun({ data }: Props) {
-  const { theme } = useTheme();
-  const rgbOpacity = theme === "dark" ? 0.9 : 0.5;
+  const { resolvedTheme } = useTheme();
+  const rgbOpacity = resolvedTheme === "dark" ? 0.9 : 0.5;
   const namaDusun = data.map((dusun) => dusun.nama);
 
   return (
@@ -41,7 +41,9 @@ export default function BarChartDusun({ data }: Props) {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: { labels: { color: theme === "dark" ? "white" : "black" } },
+          legend: {
+            labels: { color: resolvedTheme === "dark" ? "white" : "black" },
+          },
         },
         scales: {
           x: {

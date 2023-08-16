@@ -19,7 +19,6 @@ interface CarouselProps {
 }
 
 export default function Carousel({ slides }: CarouselProps) {
-  console.log(slides);
   const options = { loop: true } as EmblaOptionsType;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -39,9 +38,7 @@ export default function Carousel({ slides }: CarouselProps) {
     (index: number) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi],
   );
-  const test = () => {
-    console.log(emblaApi, "emblaApi");
-  };
+
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
     setScrollSnaps(emblaApi.scrollSnapList());
   }, []);
@@ -78,10 +75,7 @@ export default function Carousel({ slides }: CarouselProps) {
           </div>
         ))}
       </div>
-      <div
-        className="absolute bottom-0 left-0 z-10 flex h-full w-full items-center justify-between"
-        onClick={test}
-      >
+      <div className="absolute bottom-0 left-0 z-10 flex h-full w-full items-center justify-between">
         <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled} />
         <NextButton onClick={scrollNext} disabled={nextBtnDisabled} />
       </div>

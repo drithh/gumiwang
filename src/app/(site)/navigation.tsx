@@ -77,7 +77,7 @@ export default function Navigation() {
               <Menu />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="mt-[11px] w-screen  rounded-t-none border-0 py-4 shadow-2xl ">
+          <DropdownMenuContent className="mt-[11px] w-screen rounded-t-none border-0 bg-background py-4 shadow-2xl ">
             <DropdownMenuGroup className="flex flex-col gap-2">
               <DropdownMenuItem>
                 <Link

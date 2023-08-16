@@ -2,7 +2,6 @@ import BarChartDusun from "~/components/demografi/bar-chart-dusun";
 import PieChartDusun from "~/components/demografi/pie-chart-dusun";
 import {
   Table,
-  TableCaption,
   TableHeader,
   TableRow,
   TableHead,
@@ -14,13 +13,35 @@ import { columns } from "~/components/demografi/columns";
 import { DataTable } from "~/components/demografi/data-table";
 export default async function DemografiPage() {
   const dataDusun = await getDataDusun();
-  console.log(dataDusun);
+
+  // reduce jumlah warga from rest of warga
+  const dataDusunReduced = dataDusun.map((dusun) => {
+    const jumlahWargaLakiLaki =
+      dusun.jumlahWarga?.lakiLaki -
+      dusun.jumlahWargaBalita?.lakiLaki -
+      dusun.jumlahWargaUsiaSekolah?.lakiLaki -
+      dusun.jumlahWargaLansia?.lakiLaki;
+    const jumlahWargaPerempuan =
+      dusun.jumlahWarga?.perempuan -
+      dusun.jumlahWargaBalita?.perempuan -
+      dusun.jumlahWargaUsiaSekolah?.perempuan -
+      dusun.jumlahWargaLansia?.perempuan;
+
+    return {
+      ...dusun,
+      jumlahWarga: {
+        lakiLaki: jumlahWargaLakiLaki || 0,
+        perempuan: jumlahWargaPerempuan || 0,
+      },
+    };
+  });
+
   return (
     <main className="mx-auto mt-12 flex max-w-5xl flex-col gap-12 px-4 md:mt-24 xl:px-0">
       <h1 className="text-center text-4xl font-bold text-foreground">
         Demografi Desa Gumiwang Lor
       </h1>
-      <div className="flex flex-col place-content-center place-items-center gap-4 rounded-xl bg-secondary p-4">
+      <div className="flex flex-col place-content-center place-items-center gap-4 rounded-xl bg-secondary p-4 shadow-md">
         <h2 className="text-center text-base font-bold text-foreground sm:text-xl md:text-2xl">
           Jumlah penduduk desa Gumiwang Lor berdasarkan usia
         </h2>
@@ -28,7 +49,7 @@ export default async function DemografiPage() {
           <PieChartDusun data={dataDusun} />
         </div>
       </div>
-      <div className="flex flex-col place-content-center place-items-center gap-4 rounded-xl bg-secondary p-4">
+      <div className="flex flex-col place-content-center place-items-center gap-4 rounded-xl bg-secondary p-4 shadow-md">
         <h2 className="text-center text-base font-bold text-foreground sm:text-xl md:text-2xl">
           Jumlah penduduk desa Gumiwang Lor tiap dusun
         </h2>
@@ -40,16 +61,16 @@ export default async function DemografiPage() {
         <h2 className="my-4 text-center text-base font-bold text-foreground sm:text-xl md:text-2xl">
           Tabel Jumlah penduduk desa Gumiwang Lor tiap dusun
         </h2>
-        <DataTable columns={columns} data={dataDusun} />
+        <DataTable columns={columns} data={dataDusunReduced} />
       </div>
       <div className="block sm:hidden">
         <h2 className="my-4 text-center text-base font-bold text-foreground sm:text-xl md:text-2xl">
           Jumlah penduduk desa Gumiwang Lor tiap dusun
         </h2>
         <div className="flex flex-col gap-3">
-          {dataDusun.map((dusun) => (
+          {dataDusunReduced.map((dusun) => (
             <div
-              className="flex flex-col place-content-center place-items-center gap-1 rounded-xl bg-secondary p-4"
+              className="flex flex-col place-content-center place-items-center gap-1 rounded-xl bg-secondary p-4 shadow-md"
               key={dusun._id}
             >
               <h3 className="text-center text-base font-bold text-foreground sm:text-xl md:text-2xl">
