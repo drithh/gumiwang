@@ -44,7 +44,7 @@ export default function Footer() {
                   href="/dana-desa"
                   className="text-sm font-light text-foreground hover:underline"
                 >
-                  Dana Desa
+                  APB Desa
                 </Link>
                 <Link
                   href="/demografi"

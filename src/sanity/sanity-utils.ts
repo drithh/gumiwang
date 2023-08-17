@@ -1,6 +1,7 @@
 import { createClient } from "next-sanity";
 import { env } from "~/env.mjs";
 import {
+  Apbdes,
   HalamanProfil,
   HalamanUtama,
   PembangunanDesa,
@@ -67,4 +68,9 @@ export async function getDataDusun(): Promise<Dusun[]> {
     nama, jumlahWargaBalita, jumlahWarga, jumlahWargaLansia, _id, jumlahWargaUsiaSekolah, namaKepalaDusun
   }`);
   return dataDusun;
+}
+
+export async function getApbdes(): Promise<Apbdes> {
+  const dataApbdes = await client.fetch(`*[_type == "halamanApbdes"][0]`);
+  return dataApbdes;
 }

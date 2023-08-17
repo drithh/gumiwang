@@ -41,7 +41,14 @@ export default defineConfig({
                 .schemaType("halamanProfil")
                 .documentId("halamanProfil"),
             ),
-
+            S.listItem().title("Halaman APBDes").id("halamanApbdes").child(
+              // Instead of rendering a list of documents, we render a single
+              // document, specifying the `documentId` manually to ensure
+              // that we're editing the single instance of the document
+              S.document()
+                .schemaType("halamanApbdes")
+                .documentId("halamanApbdes"),
+            ),
             // Regular document types
             S.documentTypeListItem("dusun").title("Dusun"),
             S.documentTypeListItem("pembangunanDesa").title("Pembangunan Desa"),

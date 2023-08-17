@@ -5,3 +5,6 @@ export * from "./objects/perangkat-desa";
 export * from "./objects/dusun";
 export * from "./halaman-profil/halaman-profil";
 export * from "./halaman-pembangunan-desa/pembangunan-desa";
+export * from "./objects/bidang";
+export * from "./objects/dana";
+export * from "./halaman-apbdes/apbdes";

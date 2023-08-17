@@ -87,7 +87,7 @@ export default function Navigation() {
                   className="w-full text-center font-medium"
                   href="/dana-desa"
                 >
-                  Dana Desa
+                  APB Desa
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem
