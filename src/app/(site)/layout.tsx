@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     shortcut: ["/apple-touch-icon.png"],
   },
   manifest: "/site.webmanifest",
+  referrer: "no-referrer",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -26,9 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <Navigation />
-        {children}
-        <Footer />
+          <Navigation />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

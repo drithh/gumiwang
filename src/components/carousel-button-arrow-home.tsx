@@ -22,6 +22,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
+      aria-label="Previous"
       className="z-1  h-6 w-6 bg-transparent sm:h-10 sm:w-10 md:h-16 md:w-16"
       type="button"
       {...restProps}
@@ -45,6 +46,7 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
+      aria-label="Next"
       className="transparent z-1 h-6 w-6 sm:h-10 sm:w-10 md:h-16 md:w-16"
       type="button"
       {...restProps}

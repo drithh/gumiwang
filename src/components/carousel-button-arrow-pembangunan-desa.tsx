@@ -21,7 +21,12 @@ export const PrevButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button className="z-1  transparent h-6 w-6 " type="button" {...restProps}>
+    <button
+      aria-label="Previous"
+      className="z-1  transparent h-6 w-6 "
+      type="button"
+      {...restProps}
+    >
       <svg
         className="stroke-border stroke-[12] text-foreground"
         viewBox="0 0 532 532"
@@ -40,7 +45,12 @@ export const NextButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button className="transparent z-1 h-6 w-6 " type="button" {...restProps}>
+    <button
+      aria-label="Next"
+      className="transparent z-1 h-6 w-6 "
+      type="button"
+      {...restProps}
+    >
       <svg
         className="stroke-border stroke-[12] text-foreground"
         viewBox="0 0 532 532"
