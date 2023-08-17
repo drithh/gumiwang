@@ -83,10 +83,7 @@ export default function Navigation() {
                 asChild
                 className="flex place-content-center text-center"
               >
-                <Link
-                  className="w-full text-center font-medium"
-                  href="/dana-desa"
-                >
+                <Link className="w-full text-center font-medium" href="/apbdes">
                   APB Desa
                 </Link>
               </DropdownMenuItem>
@@ -127,7 +124,7 @@ export default function Navigation() {
                     title={"Pembangunan Desa"}
                     href={"/pembangunan-desa"}
                   ></ListItem>
-                  <ListItem title={"Dana Desa"} href={"/dana-desa"}></ListItem>
+                  <ListItem title={"APB Desa"} href={"/apbdes"}></ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>

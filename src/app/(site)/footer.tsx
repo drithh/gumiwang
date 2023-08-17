@@ -41,7 +41,7 @@ export default function Footer() {
                   Pembangunan Desa
                 </Link>
                 <Link
-                  href="/dana-desa"
+                  href="/apbdes"
                   className="text-sm font-light text-foreground hover:underline"
                 >
                   APB Desa

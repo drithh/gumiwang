@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "~/components/ui/table";
 import { getApbdes } from "~/sanity/sanity-utils";
-import { Bidang } from "~/types";
+import { Bidang, Dana } from "~/types";
 
 export default async function DanaDesaPage() {
   const apbdes = await getApbdes();
@@ -31,6 +31,18 @@ export default async function DanaDesaPage() {
       totalRealisasi,
     } as Bidang;
   });
+
+  const belanjaDesaFromKegiatan = belanjaKegiatanWithTotal.map((kegiatan) => {
+    return {
+      nama: kegiatan.nama,
+      anggaran: kegiatan.totalAnggaran,
+      realisasi: kegiatan.totalRealisasi,
+    };
+  }) as Dana[];
+
+  const apbdesBelanja = apbdes?.belanjaDesa || [];
+
+  const combinedBelanja = [...apbdesBelanja, ...belanjaDesaFromKegiatan];
 
   const apbdesWithTotal = {
     ...apbdes,
@@ -107,21 +119,18 @@ export default async function DanaDesaPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {belanjaKegiatanWithTotal.map((bidang, index) => (
+              {combinedBelanja.map((bidang, index) => (
                 <TableRow key={index}>
                   <TableCell className="font-medium">{bidang.nama}</TableCell>
                   <TableCell className="font-medium">
-                    {getCurrency(bidang.totalAnggaran ?? 0)}
+                    {getCurrency(bidang?.anggaran ?? 0)}
                   </TableCell>
                   <TableCell className="font-medium">
-                    {getCurrency(bidang?.totalRealisasi ?? 0)}
+                    {getCurrency(bidang?.realisasi ?? 0)}
                   </TableCell>
                   <TableCell className="font-medium">
                     {getCurrency(
-                      getSlipa(
-                        bidang.totalAnggaran ?? 0,
-                        bidang?.totalRealisasi,
-                      ),
+                      getSlipa(bidang.anggaran ?? 0, bidang?.realisasi),
                     )}
                   </TableCell>
                 </TableRow>
