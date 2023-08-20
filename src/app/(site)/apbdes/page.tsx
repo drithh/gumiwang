@@ -7,6 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table";
+import { env } from "~/env.mjs";
 import { getApbdes } from "~/sanity/sanity-utils";
 import { Bidang, Dana } from "~/types";
 
@@ -232,3 +233,5 @@ export default async function DanaDesaPage() {
     </main>
   );
 }
+
+export const revalidate = env.REVALIDATE;

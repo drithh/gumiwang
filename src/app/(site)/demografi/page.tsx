@@ -11,6 +11,7 @@ import {
 import { getDataDusun } from "~/sanity/sanity-utils";
 import { columns } from "~/components/demografi/columns";
 import { DataTable } from "~/components/demografi/data-table";
+import { env } from "~/env.mjs";
 export default async function DemografiPage() {
   const dataDusun = await getDataDusun();
 
@@ -133,3 +134,5 @@ export default async function DemografiPage() {
     </main>
   );
 }
+
+export const revalidate = env.REVALIDATE;

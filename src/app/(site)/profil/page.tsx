@@ -3,6 +3,7 @@ import React from "react";
 import { getHalamanProfil, getPerangkatDesa } from "~/sanity/sanity-utils";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { cn } from "~/lib/utils";
+import { env } from "~/env.mjs";
 
 export default async function Profil() {
   const halamanProfil = await getHalamanProfil();
@@ -95,3 +96,5 @@ export default async function Profil() {
     </main>
   );
 }
+
+export const revalidate = env.REVALIDATE;

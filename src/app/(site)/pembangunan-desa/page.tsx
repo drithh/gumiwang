@@ -6,6 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/id";
 import { formatter } from "~/lib/utils";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
+import { env } from "~/env.mjs";
 dayjs.extend(relativeTime);
 dayjs.locale("id");
 
@@ -64,3 +65,5 @@ export default async function PembangunanDesaPage() {
     </main>
   );
 }
+
+export const revalidate = env.REVALIDATE;
