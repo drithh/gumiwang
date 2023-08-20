@@ -1,7 +1,8 @@
-import type { Slide } from '..';
+import type { Slide } from "..";
 
 export type HalamanUtama = {
   _id: string;
-  overview: string;
+  email: string;
+  noTelepon: string;
   slides: Slide[];
 };

@@ -2,8 +2,11 @@ import { MapPin, Phone, Send } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
+import { getHalamanUtama } from "~/sanity/sanity-utils";
 
-export default function Footer() {
+export default async function Footer() {
+  const halamanUtama = await getHalamanUtama();
+
   return (
     <footer className="bg-secondary">
       <div className="mx-auto mt-12 max-w-5xl">
@@ -65,11 +68,11 @@ export default function Footer() {
                 </p>
                 <Send className="h-4 w-4 text-foreground" />
                 <p className="text-sm font-light text-foreground">
-                  gumiwanglor@gmail.com
+                  {halamanUtama.email}
                 </p>
                 <Phone className="h-4 w-4 text-foreground" />
                 <p className="text-sm font-light text-foreground">
-                  0812-3456-7890
+                  {halamanUtama.noTelepon}
                 </p>
               </div>
             </div>

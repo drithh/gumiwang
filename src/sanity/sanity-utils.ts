@@ -19,7 +19,7 @@ const client = createClient({
 
 export async function getHalamanUtama(): Promise<HalamanUtama> {
   const halamanUtama = await client.fetch(`*[_type == "halaman-utama"]{
-    _id, overview, "slides": tampilanSlide[]-> {
+    _id, email, noTelepon, "slides": tampilanSlide[]-> {
       _id,
       judul,
       deskripsi,
