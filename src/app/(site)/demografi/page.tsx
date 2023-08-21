@@ -135,4 +135,4 @@ export default async function DemografiPage() {
   );
 }
 
-export const revalidate = env.REVALIDATE;
+export const revalidate = 60;

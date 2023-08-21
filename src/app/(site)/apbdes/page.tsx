@@ -234,4 +234,4 @@ export default async function DanaDesaPage() {
   );
 }
 
-export const revalidate = env.REVALIDATE;
+export const revalidate = 60;

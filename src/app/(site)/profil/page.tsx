@@ -97,4 +97,4 @@ export default async function Profil() {
   );
 }
 
-export const revalidate = env.REVALIDATE;
+export const revalidate = 60;

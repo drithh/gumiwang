@@ -66,4 +66,4 @@ export default async function PembangunanDesaPage() {
   );
 }
 
-export const revalidate = env.REVALIDATE;
+export const revalidate = 60;
