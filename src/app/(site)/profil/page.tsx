@@ -4,6 +4,7 @@ import { getHalamanProfil, getPerangkatDesa } from "~/sanity/sanity-utils";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { cn } from "~/lib/utils";
 import { env } from "~/env.mjs";
+import { AspectRatio } from "~/components/ui/aspect-ratio";
 
 export default async function Profil() {
   const halamanProfil = await getHalamanProfil();
@@ -12,13 +13,15 @@ export default async function Profil() {
     <main className="mx-auto mt-12 flex max-w-5xl flex-col gap-20 px-4 md:mt-24 xl:px-0">
       <div className="mx-auto flex flex-col items-center gap-2 sm:flex-row">
         <div className="xl:px-8">
-          <div className="relative h-32 w-32 md:h-48 md:w-48">
-            <Image
-              src="/images/logo.png"
-              fill
-              alt="logo desa gumiwang lor"
-              sizes="100%"
-            ></Image>
+          <div className="relative h-32 w-32 px-4 py-2 md:h-48 md:w-48">
+            <AspectRatio ratio={8 / 10}>
+              <Image
+                src="/images/wonogiri.png"
+                fill
+                alt="logo desa gumiwang lor"
+                sizes="100%"
+              ></Image>
+            </AspectRatio>
           </div>
         </div>
         <div className="flex flex-1 flex-col place-items-center gap-4 sm:items-start">

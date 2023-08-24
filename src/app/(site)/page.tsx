@@ -23,13 +23,15 @@ export default async function Home() {
         {/* profil desa */}
         <div className="mx-auto flex flex-col items-center gap-2 sm:flex-row">
           <div className="xl:px-8">
-            <div className="relative h-32 w-32 md:h-48 md:w-48">
-              <Image
-                src="/images/logo.png"
-                fill
-                sizes="100%"
-                alt="logo desa gumiwang lor"
-              ></Image>
+            <div className="relative h-32 w-32 px-4 py-2 md:h-48 md:w-48">
+              <AspectRatio ratio={8 / 10}>
+                <Image
+                  src="/images/wonogiri.png"
+                  fill
+                  sizes="100%"
+                  alt="logo desa gumiwang lor"
+                ></Image>
+              </AspectRatio>
             </div>
           </div>
           <div className="flex flex-1 flex-col place-items-center gap-4 sm:items-start">

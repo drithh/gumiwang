@@ -11,10 +11,10 @@ export default async function Footer() {
     <footer className="bg-secondary">
       <div className="mx-auto mt-12 max-w-5xl">
         <div className=" flex  flex-col place-content-center place-items-center gap-x-20 gap-y-4 px-4 py-8 sm:flex-row sm:place-content-between sm:place-items-start md:mt-24 xl:px-0">
-          <div className="w-32">
-            <AspectRatio ratio={1}>
+          <div className="w-32 p-2">
+            <AspectRatio ratio={8 / 10}>
               <Image
-                src="/images/logo.png"
+                src="/images/wonogiri.png"
                 fill
                 alt="logo desa gumiwang lor"
                 sizes="100%"
@@ -81,7 +81,7 @@ export default async function Footer() {
         {/* copyright */}
         <div className="mt-4 flex flex-col place-content-center place-items-center text-xs opacity-50">
           <p className=" font-light text-foreground">
-            © 2021 Desa Gumiwang Lor
+            © 2023 Desa Gumiwang Lor
           </p>
           <p className=" font-light text-foreground">
             Dibuat dengan ❤️ oleh{" "}

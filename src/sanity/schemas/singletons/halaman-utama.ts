@@ -22,6 +22,12 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "alamat",
+      title: "Alamat",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "tampilanSlide",
       title: "Tampilan Slide",
       description:

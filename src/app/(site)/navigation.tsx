@@ -23,18 +23,21 @@ import {
 } from "~/components/ui/dropdown-menu";
 import React from "react";
 import { cn } from "~/lib/utils";
+import { AspectRatio } from "~/components/ui/aspect-ratio";
 
 export default function Navigation() {
   return (
     <nav className="mx-auto flex max-w-5xl place-content-between px-4 py-4 ">
       <Link href="/" className="flex items-center gap-2">
-        <div className="relative h-9 w-9 sm:h-12 sm:w-12">
-          <Image
-            src="/images/logo.png"
-            fill
-            sizes="100%"
-            alt="logo desa gumiwang lor"
-          ></Image>
+        <div className="relative h-9 w-9 p-1 sm:h-12 sm:w-12">
+          <AspectRatio ratio={8 / 10}>
+            <Image
+              src="/images/wonogiri.png"
+              fill
+              sizes="100%"
+              alt="logo desa gumiwang lor"
+            ></Image>
+          </AspectRatio>
         </div>
         <div className="flex flex-1 flex-col">
           <h2 className="text-justify text-base font-bold text-foreground sm:text-lg ">
